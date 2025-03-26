@@ -45,6 +45,7 @@ func main() {
 	Ifindex := -1
 	for _, iface := range interfaces {
 		fmt.Println("interface name", iface.Name)
+		fmt.Println("link name", linkName)
 		if iface.Name == linkName {
 			Ifindex = iface.Index
 			break
