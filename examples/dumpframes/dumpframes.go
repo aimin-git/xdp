@@ -18,10 +18,10 @@ import (
 	"log"
 	"net"
 
-	"github.com/slavc/xdp"
-	"github.com/slavc/xdp/examples/dumpframes/ebpf"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
+	"github.com/slavc/xdp"
+	"github.com/slavc/xdp/examples/dumpframes/ebpf"
 )
 
 func main() {
@@ -44,6 +44,7 @@ func main() {
 
 	Ifindex := -1
 	for _, iface := range interfaces {
+		fmt.Println("interface name", iface.Name)
 		if iface.Name == linkName {
 			Ifindex = iface.Index
 			break
